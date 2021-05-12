@@ -59,3 +59,12 @@ function checklogin()
 {
     return Auth::check();
 }
+
+function checkaction($taskID)
+{
+    $task = Auth::task($taskID);
+    if ($task->action == 1)
+        return true;
+
+    return false;
+}

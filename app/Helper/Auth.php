@@ -2,6 +2,8 @@
 
 
 use App\Contracts\AuthInterface;
+use App\Model\DB;
+use App\model\Task;
 use App\model\User;
 
 class Auth implements AuthInterface
@@ -55,5 +57,10 @@ class Auth implements AuthInterface
     public static function user()
     {
         return (new User())->find('email', session('email'));
+    }
+
+    public static function task($taskID)
+    {
+        return (new Task())->find('id', $taskID);
     }
 }

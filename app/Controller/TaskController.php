@@ -82,6 +82,7 @@ class TaskController extends Controller
             redirect('/tasks');
 
         (new Task())->delete(request('id'));
+
         redirect('/tasks');
     }
 

@@ -1,6 +1,10 @@
 <?php
 require_once ('./../templates/header.php');
+
+use App\Helper\Auth;
+
 $tasks = (new \App\Controller\TaskController())->index();
+$user = Auth::user();
 ?>
 
 <div class="row">
@@ -22,6 +26,7 @@ $tasks = (new \App\Controller\TaskController())->index();
             </thead>
             <tbody>
             <?php foreach ($tasks as $task) :?>
+            <?php if($task->user_id == $user->id) :?>
                 <tr>
                     <td> <?= $task->name ?></td>
                     <td>
@@ -38,6 +43,7 @@ $tasks = (new \App\Controller\TaskController())->index();
                         </a>
                     </td>
                 </tr>
+                <?php endif ?>
             <?php endforeach ?>
             </tbody>
         </table>

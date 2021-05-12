@@ -9,6 +9,7 @@ class UserController extends Controller
 {
     public function __construct()
     {
+        parent::__construct();
         if(checklogin()){
             redirect();
         }
@@ -65,7 +66,6 @@ class UserController extends Controller
         }
 
         $user = (new User())->find('email', request('email'));
-        var_dump($user);
 
         if(!$user){
             $this->flash->error('چنین ایمیلی وجود ندارد');
@@ -85,7 +85,7 @@ class UserController extends Controller
         Auth::login($user, $remember);
 
 
-        redirect();
+        redirect('/tasks');
         return;
     }
 }

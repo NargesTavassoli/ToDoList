@@ -151,6 +151,18 @@ class DB
         return $this->stmt->execute();
     }
 
+    public function delete($id)
+    {
+        $object = $this->find('id' , $id);
+        if(!$object)
+            throw new \Exception("this id not exist in $this->table table");
+
+        $this->stmt = $this->pdo->prepare("DELETE FROM $this->table WHERE id = :id");
+        $this->stmt->bindValue(':id' , $id);
+
+        return $this->stmt->execute();
+    }
+
     private function bindValue()
     {
         foreach ($this->bind as $key => $value){

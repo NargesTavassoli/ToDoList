@@ -17,8 +17,8 @@ $homeController->register($_POST);
 
             ?>
             <div class="panel panel-default">
-                <div class="panel-heading" style="float: right">
-                    <h3 class="panel-title" >ثبت نام</h3>
+                <div class="panel-heading">
+                    <h3 class="panel-title" style="text-align: center; margin-bottom: 20px; margin-left: 400px; margin-top: 50px;">ثبت نام</h3>
                 </div>
                 <div class="panel-body">
                     <div class="row">

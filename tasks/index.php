@@ -7,9 +7,10 @@ $tasks = (new \App\Controller\TaskController())->index();
     <div class="col-lg-8 col-lg-offset-3" style="left: 200px; top: 50px;">
         <h3>لیست کارها
             <a href="/tasks/create.php" >
-                <button class="btn btn-xs btn-success">
-                    کار جدید
-                </button>
+                <button class="btn btn-xs btn-success">کار جدید</button>
+            </a>
+            <a href="/tasks/history.php" >
+                <button class="btn btn-xs btn-secondary">تاریخچه</button>
             </a>
         </h3>
         <table class="table table-bordered">

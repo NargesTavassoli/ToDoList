@@ -15,7 +15,7 @@ class TaskController extends Controller
     }
 
     public function index(){
-        return (new Task())->select('id' , 'name')->get();
+        return (new Task())->select()->get();
     }
 
     public function create()

@@ -1,9 +1,8 @@
 <?php
-require('./templates/header.php');
-$homeController = new App\controller\UserController();
+    require('./templates/header.php');
 
-$homeController->login();
-
+    $homeController = new App\controller\UserController();
+    $homeController->login();
 ?>
 
 <!-- Page Content -->

@@ -1,8 +1,8 @@
 <?php
 require('./templates/header.php');
-$homeController = new App\controller\UserController();
 
-$homeController->register($_POST);
+$homeController = new App\controller\UserController();
+$homeController->register();
 
 ?>
 
